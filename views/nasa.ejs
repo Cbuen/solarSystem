@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<%- include('partials/head.ejs') %>
+
+  <body>
+
+    <%- include('partials/nav.ejs') %>
+      <h1>Nasa Picture Of The Day</h1>
+      <div id="picture info">
+        <h2><%- data.title %></h2>
+        <img id="pod-image" src="<%= data.url %>" alt="nasa picture of the day">
+        <h3>Date</h3>
+        <p><%- data.date %></p>
+
+        <h3>Service Version</h3>
+        <p><%- data.service_version %></p>
+
+        <h3>Description</h3>
+        <p><%- data.explanation %></p>
+
+      </div>
+
+      <%- include('partials/footer.ejs') %>
+  </body>
+
+</html>
