@@ -29,8 +29,9 @@ app.get('/nasa', async (req, res) => {
   res.render('nasa', { data })
 });
 
+const PORT = process.env.PORT || 3000;
 
-app.listen(3000, () => {
-  console.log('server started');
+app.listen(PORT, () => {
+  console.log(`Server started on port ${PORT}`);
 });
 
