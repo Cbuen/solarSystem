@@ -22,7 +22,12 @@ app.get('/planet', (req, res) => {
 });
 
 app.get('/nasa', async (req, res) => {
-  const today = new Date().toISOString().split('T')[0];
+  const today = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "America/Los_Angeles",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit"
+  }).format(new Date());
   let URL = `https://api.nasa.gov/planetary/apod?api_key=9mUzIkhlZCZaOoMfspg7jMmwZCZ4LiRHtkgkambD&date=${today}`
   let response = await fetch(URL);
   let data = await response.json();
